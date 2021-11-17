@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let direction = 1 // 1 is right, -1 is left
     let score = 0
-    let speed = 0.99999
+    let speed = 0.9
     let intervalTime = 0
     let interval = 0
         // start and restart the game
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         randomApple()
         direction = 1
         scoreDisplay.innerText = score
-        intervalTime = 1000
+        intervalTime = 800
         currentSnake = [2, 1, 0]
         currentIndex = 0
         currentSnake.forEach(index => squares[index].classList.add('snake'))
@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function randomApple() {
         do {
             appleIndex = Math.floor(Math.random() * squares.length - 1)
-        } while (squares[appleIndex].classList.contains('snake'))
+        }
+        while (squares[appleIndex].classList.contains('snake'))
         squares[appleIndex].classList.add('apple')
     }
 
